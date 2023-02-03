@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "get-pixels": "^3.3.3",
+    "jimp": "^0.16.2",
+    "sharp": "^0.31.3",
+    "util": "^0.12.5"
+  }
+}
