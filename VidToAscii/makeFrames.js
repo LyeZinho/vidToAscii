@@ -1,9 +1,16 @@
+const fs = require('fs');
+
 // Make images from video
 const exec = require('child_process').exec;
 
-const inputVideo = 'zerotwo.mp4';
+const inputVideo = 'ousama.mp4';
 const frameDirectory = 'frames/';
 const fps = 20;
+
+// Create folder if not exists
+if (!fs.existsSync(frameDirectory)) {
+  fs.mkdirSync(frameDirectory);
+}
 
 
 // Record the current time
