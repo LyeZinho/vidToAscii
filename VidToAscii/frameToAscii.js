@@ -1,16 +1,20 @@
 const fs = require('fs');
 const Jimp = require('jimp');
 
+// const asciiShades = [
+//   " ", ".", "*", "+", "#", "%", "@", ""
+// ];
+
 const asciiShades = [
-  " ", ".", "*", "+", "#", "%", "@"
-];
+  " ", ".", "•", "`", "^", ":", "*", "+", "#", "@", "%", "8", "B", "M", "W"
+  ];
 
 // Make asscii from images
 async function frameToAscii(frame) {
   let grayScaleFrame;
   try {
     grayScaleFrame = await Jimp.read(frame);
-    grayScaleFrame.resize(150, 150);
+    grayScaleFrame.resize(160, 160);
     grayScaleFrame = grayScaleFrame.quality(60).greyscale();
   } catch (err) {
     console.error(err);

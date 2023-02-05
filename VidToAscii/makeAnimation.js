@@ -46,13 +46,20 @@ async function makeAscii() {
     +++++++++++++++++
     _
     */
-    
+    let startTime = new Date().getTime();
     for (const frame of frames) {
+        console.clear();
+        console.log(`Processing ${frame}`);
+        // Get the time from one frame to other
         let currentAscii = await frameToAscii(inputDir + frame);
         console.log(currentAscii);
+        
         ascii += currentAscii;
         ascii += "_";
     }
+    console.log(`Took ${(new Date().getTime() - startTime) / 1000} seconds`);
+    // Get the count of frames animated
+    const frameCount = ascii.split("_").length - 1;
 
     return ascii;
 }

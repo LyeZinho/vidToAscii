@@ -3,9 +3,9 @@ const fs = require('fs');
 // Make images from video
 const exec = require('child_process').exec;
 
-const inputVideo = 'kobayashi.mp4';
+const inputVideo = 'jojo.mp4';
 const frameDirectory = 'frames/';
-const fps = 50;
+const fps = 2;
 
 // Create folder if not exists
 if (!fs.existsSync(frameDirectory)) {
