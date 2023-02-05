@@ -1,11 +1,12 @@
 const fs = require('fs');
+const config = require('./config.json')
 
 // Make images from video
 const exec = require('child_process').exec;
 
-const inputVideo = 'zerotwo.mp4';
+const inputVideo = config.srcVideo;
 const frameDirectory = 'frames/';
-const fps = 40;
+const fps = config.fpsFrameCutting;
 
 // Create folder if not exists
 if (!fs.existsSync(frameDirectory)) {

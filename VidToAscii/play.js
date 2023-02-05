@@ -17,11 +17,12 @@ the _ is the separator from one frame to other
 
 const fs = require('fs');
 const path = require('path');
+const config = require('./config.json');
 
 const inputFile = "ascii.txt";
 
 // This basically is the delay for make the images more smooth / frame rate
-const delaySeconds = 0.02;
+const delaySeconds = config.playerFrameRate;
 
 // Read the file
 const ascii = fs.readFileSync(inputFile, 'utf8');

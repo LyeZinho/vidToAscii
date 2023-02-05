@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Jimp = require('jimp');
+const config = require('./config.json')
 
 // const asciiShades = [
 //   " ", ".", "*", "+", "#", "%", "@", ""
@@ -14,7 +15,7 @@ async function frameToAscii(frame) {
   let grayScaleFrame;
   try {
     grayScaleFrame = await Jimp.read(frame);
-    grayScaleFrame.resize(160, 160);
+    grayScaleFrame.resize(config.wSize, config.hSize);
     grayScaleFrame = grayScaleFrame.quality(60).greyscale();
   } catch (err) {
     console.error(err);

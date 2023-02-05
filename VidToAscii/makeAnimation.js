@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { frameToAscii } = require('./frameToAscii');
+const config = require('./config.json');
 
 const inputDir = "frames/";
 const outputFile = "ascii.txt";
@@ -52,7 +53,10 @@ async function makeAscii() {
     let startTime = new Date().getTime();
     for (const frame of frames) {
         console.clear();
-        console.log(`Processing: ${frame}`);
+
+        if(config.renderMode === false){
+            console.log(`Processing: ${frame}`);
+        }
 
         const frameNum = parseInt(frame.replace("frame", "").replace(".jpg", ""));
  
@@ -68,8 +72,10 @@ async function makeAscii() {
         currentFrameTime.endTime = (new Date().getTime() - startTime) / 1000;
         averengeFrames.push(currentFrameTime);
 
-        // Get the 
-        console.log(currentAscii);
+        if(config.renderMode === false){
+            console.log(currentAscii);
+        }
+        
         
         ascii += currentAscii;
         ascii += "_";

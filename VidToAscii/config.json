@@ -1,0 +1,9 @@
+{
+    "srcVideo": "vid.mp4",
+    "fpsFrameCutting": 10,
+    "hSize": 160,
+    "wSize": 160,
+    "playerFrameRate": 0.1,
+    "sys": "windows",
+    "renderMode": true
+}
