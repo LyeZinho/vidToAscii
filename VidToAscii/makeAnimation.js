@@ -46,20 +46,50 @@ async function makeAscii() {
     +++++++++++++++++
     _
     */
+
+    let averengeFrames = []; 
+
     let startTime = new Date().getTime();
     for (const frame of frames) {
         console.clear();
-        console.log(`Processing ${frame}`);
-        // Get the time from one frame to other
+        console.log(`Processing: ${frame}`);
+
+        const frameNum = parseInt(frame.replace("frame", "").replace(".jpg", ""));
+ 
+        const currentFrameTime = {
+            startTime: 0,
+            endTime: 0
+        };
+
+        currentFrameTime.startTime = (new Date().getTime() - startTime) / 1000;
+
         let currentAscii = await frameToAscii(inputDir + frame);
+
+        currentFrameTime.endTime = (new Date().getTime() - startTime) / 1000;
+        averengeFrames.push(currentFrameTime);
+
+        // Get the 
         console.log(currentAscii);
         
         ascii += currentAscii;
         ascii += "_";
     }
+    console.clear();
+
+    let totalTime = 0;
+    for (const frameTime of averengeFrames) {
+        totalTime += frameTime.endTime - frameTime.startTime;
+    }
+    const averengeTime = Math.round((totalTime / averengeFrames.length) * 100) / 100;
+
+    
+
+    console.log(`Averenge time for render each image: ${averengeTime} seconds`);
+
     console.log(`Took ${(new Date().getTime() - startTime) / 1000} seconds`);
-    // Get the count of frames animated
+
     const frameCount = ascii.split("_").length - 1;
+    console.log(`Animated ${frameCount} frames`);
 
     return ascii;
 }

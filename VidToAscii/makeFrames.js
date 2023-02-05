@@ -3,9 +3,9 @@ const fs = require('fs');
 // Make images from video
 const exec = require('child_process').exec;
 
-const inputVideo = 'jojo.mp4';
+const inputVideo = 'zerotwo.mp4';
 const frameDirectory = 'frames/';
-const fps = 2;
+const fps = 40;
 
 // Create folder if not exists
 if (!fs.existsSync(frameDirectory)) {
