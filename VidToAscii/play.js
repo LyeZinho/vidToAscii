@@ -21,7 +21,7 @@ const path = require('path');
 const inputFile = "ascii.txt";
 
 // This basically is the delay for make the images more smooth
-const delaySeconds = 0.04;
+const delaySeconds = 0.03;
 
 // Read the file
 const ascii = fs.readFileSync(inputFile, 'utf8');

@@ -10,7 +10,7 @@ async function frameToAscii(frame) {
   let grayScaleFrame;
   try {
     grayScaleFrame = await Jimp.read(frame);
-    grayScaleFrame.resize(100, 100);
+    grayScaleFrame.resize(150, 150);
     grayScaleFrame = grayScaleFrame.quality(60).greyscale();
   } catch (err) {
     console.error(err);
