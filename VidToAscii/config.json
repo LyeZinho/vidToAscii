@@ -5,5 +5,5 @@
     "wSize": 160,
     "playerFrameRate": 0.1,
     "sys": "windows",
-    "renderMode": true
+    "renderMode": false
 }
